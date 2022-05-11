@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         moveDirection = new Vector2(moveX, moveY).normalized;
+
+        if(Input.GetKey(KeyCode.Space))
+        {
+            moveDirection = new Vector2(0f, 0f);
+        }
     }
 
     void move()
