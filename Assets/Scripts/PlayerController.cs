@@ -5,11 +5,9 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
-    public bool isSpacePressed; //initialize to false //will value get reset every frame
 
     void Update()
     {   
-        isSpacePressed = false;
         getInput();
     }
 
@@ -30,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     void move()
     {
+        
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 }
