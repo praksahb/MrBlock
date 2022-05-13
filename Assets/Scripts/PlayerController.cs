@@ -5,16 +5,17 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
-    public bool isSpacePressed;
+    public bool isSpacePressed; //initialize to false //will value get reset every frame
 
     void Update()
-    {
+    {   
+        isSpacePressed = false;
         getInput();
     }
 
     void FixedUpdate()
     {
-            move();
+        move();
     }
 
     void getInput()
@@ -24,9 +25,7 @@ public class PlayerController : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY).normalized;
 
         if(Input.GetKey(KeyCode.Space))
-        {
             moveDirection = new Vector2(0f, 0f);
-        }
     }
 
     void move()
