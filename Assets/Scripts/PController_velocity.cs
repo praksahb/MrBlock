@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PController_velocity : MonoBehaviour
 {
     public float moveSpeed;
     public Rigidbody2D rb;
@@ -8,15 +8,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {   
-        getInput();
+        GetInput();
     }
 
     void FixedUpdate()
     {
-        move();
+        Move();
     }
 
-    void getInput()
+    void GetInput()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
@@ -26,9 +26,8 @@ public class PlayerController : MonoBehaviour
             moveDirection = new Vector2(0f, 0f);
     }
 
-    void move()
+    void Move()
     {
-        
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 }
